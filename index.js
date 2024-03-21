@@ -3,7 +3,21 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+
+const questions = [
+    {
+      type: 'input',
+      name: 'title',
+      message: 'Enter the title of your note:',
+    },
+    {
+      type: 'input',
+      name: 'text',
+      message: 'Enter the text of your note:',
+    },
+  ];
+
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
