@@ -4,18 +4,63 @@ const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
 
+// Array of questions for user input
 const questions = [
-    {
+  {
       type: 'input',
       name: 'title',
-      message: 'Enter the title of your note:',
-    },
-    {
+      message: 'What is the title of your project? (Required)',
+      validate: input => {
+          if (input) {
+              return true;
+          } else {
+              return 'Please enter the title of your project.';
+          }
+      }
+  },
+  {
       type: 'input',
-      name: 'text',
-      message: 'Enter the text of your note:',
-    },
-  ];
+      name: 'description',
+      message: 'Provide a description of your project:'
+  },
+  {
+      type: 'input',
+      name: 'installation',
+      message: 'Provide installation instructions:'
+  },
+  {
+      type: 'input',
+      name: 'usage',
+      message: 'Provide usage information:'
+  },
+  {
+      type: 'list',
+      name: 'license',
+      message: 'Choose a license for your application:',
+      choices: ['MIT', 'GNU GPLv3', 'Apache 2.0', 'ISC', 'None']
+  },
+  {
+      type: 'input',
+      name: 'contributing',
+      message: 'Provide contribution guidelines:'
+  },
+  {
+      type: 'input',
+      name: 'tests',
+      message: 'Provide test instructions:'
+  },
+  {
+      type: 'input',
+      name: 'githubUsername',
+      message: 'What is your GitHub username?'
+  },
+  {
+      type: 'input',
+      name: 'email',
+      message: 'What is your email address?'
+  }
+];
+
 
 
 
@@ -33,7 +78,23 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
+
+// Function to initialize app
+function init() {
+  // Prompt user with questions
+  inquirer
+      .prompt(questions)
+      .then(answers => {
+          // Process user answers and generate README content
+          const readmeContent = generateReadme(answers);
+          // Write README file
+          writeToFile('README.md', readmeContent);
+      })
+      .catch(error => {
+          console.error('Error occurred while prompting questions:', error);
+      });
+    }   
 
 // Function call to initialize app
 init();
