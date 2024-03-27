@@ -1,10 +1,10 @@
-# READme generater
+# README generator
 
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-node project
+node.js
 
 ## Table of Contents
 
@@ -21,7 +21,12 @@ npm install
 
 ## Usage
 
-free
+https://drive.google.com/file/d/1_isfAsakJPQdLhF-B9Zw5wXuynu6Nh-9/view 
+
+![alt](assets/image/Screenshot%202024-03-27%20at%2012.17.34 AM.png)
+
+
+Free
 
 ## License
 

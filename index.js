@@ -5,7 +5,6 @@ const inquirer = require('inquirer');
 const { generateMarkdown } = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
-
 // Array of questions for user input
 const questions = [
   {
@@ -63,11 +62,8 @@ const questions = [
   }
 ];
 
-
-
-
 // TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
@@ -80,8 +76,6 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-//function init() {}
-
 // Function to initialize app
 function init() {
   // Prompt user with questions
